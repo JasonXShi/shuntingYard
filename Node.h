@@ -1,6 +1,5 @@
 /* header file for the Node class
- *
- *   Author: Connor Shu
+ *    Author: Connor Shu
  *    Class: CS162
  */
 
@@ -20,15 +19,15 @@ using namespace std;
                     Node* right; 
                     char* content;
          public:
-                    Node(Student* content); //constructor
+                    Node(); //constructor
                     ~Node(); //destructor         
                     //getters
                    Node* getRight();
-                   Student* getLeft();
+                   Node* getLeft();
                    Node* getContent();
                    //setters
-                    void setLeft(Node* left);
-                    void setRight(Node* right);
-                    void setContent(char* content);
+                    void setLeft(Node* newLeft);
+                    void setRight(Node* newRight);
+                    void setContent(char* newContent);
 };
 #endif
