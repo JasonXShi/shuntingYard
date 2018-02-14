@@ -24,7 +24,7 @@ using namespace std;
                     //getters
                    Node* getRight();
                    Node* getLeft();
-                   Node* getContent();
+                   char* getContent();
                    //setters
                     void setLeft(Node* newLeft);
                     void setRight(Node* newRight);
