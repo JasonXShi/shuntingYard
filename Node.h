@@ -1,21 +1,21 @@
-/* header file for the Node class
- *    Author: Connor Shu
+/*    Header file for the Node class
+ *    Author: Jason Shi
  *    Class: CS162
+ *    Date: 2/20/18
  */
 
 #ifndef NODE_H
 #define NODE_H
-
+//import stuff
 #include <iostream>
 #include <cstdlib>
-
 #include <cstring>
 using namespace std;
 
  class Node {
          private:
-                     //member variables
-                    Node* left; //previous Node in the linked list
+                   //intializes variables
+                    Node* left; 
                     Node* right; 
                     char* content;
          public:
