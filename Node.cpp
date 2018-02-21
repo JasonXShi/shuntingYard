@@ -1,4 +1,4 @@
-//Node header class for the binary tree
+//Implementation of the Node class
 
 #include  "Node.h"
 #include <cstdlib>
