@@ -222,7 +222,7 @@ int main(){
             	}else if(strcmp(input2, "POST")==0){
                 	post(binHead);
             	}else if(strcmp(input2, "EXIT")==0){
-            	   	 break;
+            	   	 exit(0);
            	 }
         }   
     }
