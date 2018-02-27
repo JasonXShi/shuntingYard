@@ -137,7 +137,7 @@ int main(){
 					if(oper[*(*i)]<oper[*peak(stack)]){
 						output.push_back(pop(stack));
 						
-					}else if(oper[*(*i)]==oper[*peak(stack)]&&assoc[oper[*peak(stack)]]==0){
+					}else if(oper[*(*i)]==oper[*peak(stack)]&&assoc[*peak(stack)]==0){
 					
 						output.push_back(pop(stack));
 						
