@@ -23,7 +23,7 @@ void post(Node* head){
 	post(head->getLeft());
 	post(head->getRight());
 	//prints out the content of the node
-	cout << head->getContent();
+	cout << head->getContent() << " ";
 }
 
 //method to print out the binary expression tree with infix
@@ -34,15 +34,15 @@ void in(Node* head){
 	}
 	//when operators are found, also print out parenthesis
 	if(*head->getContent()=='+'||*head->getContent()=='-'||*head->getContent()=='*'||*head->getContent()=='/'||*head->getContent()=='^'){
-		cout << "(";
+		cout << "(" << " ";
 	}
 	//recursively go through and print
 	in(head->getLeft());
-	cout << head->getContent();
+	cout << head->getContent() << " ";
 	in(head->getRight());
 	//print out other parenthesis
 	if(*head->getContent()=='+'||*head->getContent()=='-'||*head->getContent()=='*'||*head->getContent()=='/'||*head->getContent()=='^'){
-		cout << ")";
+		cout << ")" << " ";
 	}
 }
 //method to print out the binary expression tree with prefix
@@ -52,7 +52,7 @@ void pre(Node* head){
 		return;
 	}
 	//prints and recusively goes through the tree
-	cout << head->getContent();
+	cout << head->getContent() << " ";
 	pre(head->getLeft());
 	pre(head->getRight());
 }
