@@ -179,8 +179,9 @@ int main(){
 	}
 	cout << "  " << endl;
         //create the stack for the binary expression tree
-        stack<Node*> binStack;
-	Node *binHead, *c1, *c2;
+       // stack<Node*> binStack;
+	vector<Node*> binStack;
+    Node *binHead, *c1, *c2;
 	while(1)
 	{
 		//iterate through the old postfix expression and create the tree
@@ -189,26 +190,27 @@ int main(){
 				//add Node* to stack
 				Node* tempNode = new Node();
 				tempNode->setContent(*ite);
-				binStack.push(tempNode); 		
-            		}else if(*(*ite)=='+'||*(*ite)=='-'||*(*ite)=='*'||*(*ite)=='/'||*(*ite)=='^'){
+				//binStack.push(tempNode); 	
+                binStack.push_back(tempNode);	
+            }else if(*(*ite)=='+'||*(*ite)=='-'||*(*ite)=='*'||*(*ite)=='/'||*(*ite)=='^'){
 				//create a new Node* and connect left and right to the 2nd and most recent Node*'s that were in the stack
 				binHead = new Node();
 				binHead->setContent(*ite);
 
-				c1 = binStack.top();
-				binStack.pop();
-				c2 = binStack.top();
-				binStack.pop();
+				c1 = binStack.back();
+				binStack.pop_back();
+				c2 = binStack.back();
+				binStack.pop_back();
 
 				binHead->setRight(c1);
 				binHead->setLeft(c2);
 				//add back into stack
-				binStack.push(binHead);
+				binStack.push_back(binHead);
 			}	
 		}
 		//at the end, the only thing in the stack is the head to the expression tree
-		binHead = binStack.top();
-		binStack.pop();
+		binHead = binStack.back();
+		binStack.pop_back();
 		//get input to output as pre, in, or postfix
             	char* input2 = new char[5];
             	cout << "Convert to Prefix, Infix, Postfix, or Exit?" << endl << "(PRE, IN, POST, EXIT)" << endl;
